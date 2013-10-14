@@ -26,7 +26,7 @@ Then add this to your .bashrc
 
 A dependency from Buola
 
-    cd /home/richarde/dev/bluebrain/lda/TopicModels_chengz
+    cd {INSTALL_ROOT}
     wget http://ab-initio.mit.edu/nlopt/nlopt-2.3.tar.gz
     tar -xzf nlopt-2.3.tar.gz && rm nlopt-2.3.tar.gz
     cd nlopt-2.3
@@ -38,17 +38,17 @@ A dependency from Buola
 
 A matrix manipulation libary (among others)
 
-    cd /home/richarde/dev/bluebrain/lda/TopicModels_chengz
     sudo apt-get install libeigen3-dev libxml2-dev libdbus-1-dev libncurses5-dev
+    cd {INSTALL_ROOT}
     wget http://www.csc.kth.se/~chengz/minibuola.tar.gz
     tar -xzf minibuola.tar.gz && rm minibuola.tar.gz
     cd minibuola
+<!---Edit eigen_wrapper.h
     vim include/buola/mat/detail/eigen_wrapper.h
-        Changing from:
-        #include <Eigen/Dense>
-        to:
-        #include "Eigen/Dense"
-    mkdir build 
+    Change (l. 35):
+    #include <Eigen/Dense>
+    to:
+    #include "Eigen/Dense"-->
     cd build
     cmake ..
     make -j5
@@ -57,7 +57,7 @@ A matrix manipulation libary (among others)
 
 #### TopicModel 
 
-    cd /home/richarde/dev/bluebrain/lda/TopicModels_chengz
+    cd {INSTALL_ROOT}
     git clone https://github.com/renaud/Topic_Models_Cpp.git
     cd Topic_Models_Cpp
     mkdir build

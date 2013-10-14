@@ -4,11 +4,11 @@ cmake_policy(VERSION 2.8.0)
 project(TopicModel)
 
 find_package(MiniBuola REQUIRED)
-#find_package(Eigen3 REQUIRED)
+find_package(Eigen3 REQUIRED)
 
-#include_directories(SYSTEM
-#            ${EIGEN3_INCLUDE_DIR}
-#)
+include_directories(SYSTEM
+            ${EIGEN3_INCLUDE_DIR}
+)
 
 #FILE(GLOB_RECURSE cc_sources *.cc)
 set(cc_sources ccorpus.cc cmodel.cc main.cc opt.cc)
